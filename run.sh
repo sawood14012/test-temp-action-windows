@@ -15,3 +15,9 @@ printf 'auth_token: %s\ncrda_key: %s\nhost: %s' "${AUTH_TOKEN}" "${CRDA_KEY}" "$
 popd 
 
 cat $HOME/.crda/config.yaml
+
+wget https://github.com/fabric8-analytics/cli-tools/releases/download/v0.1.1/crda_0.1.1_Windows_64bit.tar.gz -o crda.tar.gz
+tar -xvf crda.tar.gz
+
+cd crda 
+./crda 
