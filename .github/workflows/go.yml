@@ -35,5 +35,5 @@ jobs:
       env:
         THREE_SCALE_KEY: ${{ secrets.THREE_SCALE_KEY }}
         CRDA_KEY: ${{ secrets.CRDA_KEY }} 
-      run: ./run.sh $THREE_SCALE_KEY $CRDA_KEY
+      run: ./run.sh
       shell: bash
