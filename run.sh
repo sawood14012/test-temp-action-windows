@@ -16,8 +16,4 @@ popd
 
 cat $HOME/.crda/config.yaml
 
-curl https://github.com/fabric8-analytics/cli-tools/releases/download/v0.1.1/crda_0.1.1_Windows_64bit.tar.gz -o crda.tar.gz
-tar -xvf crda.tar.gz
-
-cd crda 
-./crda 
+ls -l
