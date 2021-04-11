@@ -1,0 +1,42 @@
+name: Go
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.15
+    - name: Set GOPATH
+        # temporary fix
+        # see https://github.com/actions/setup-go/issues/14
+      run: |
+          echo "##[set-env name=GOPATH;]$(dirname $GITHUB_WORKSPACE)"
+          echo "##[add-path]$(dirname $GITHUB_WORKSPACE)/bin"
+      shell: bash
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+    - uses: actions/setup-python@v2
+      with:
+       python-version: '3.7'
+   
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+    - name: verify
+      run: run.sh
+      shell: bash
