@@ -31,5 +31,5 @@ jobs:
       with:
         node-version: '14'
     - name: verify
-      run: run.sh
+      run: ./run.sh
       shell: bash
